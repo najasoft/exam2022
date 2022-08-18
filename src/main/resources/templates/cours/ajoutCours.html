@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajout d'un cours en classe</title>
+</head>
+<body>
+<form th:action="@{/cours/add}" th:object="${cours}" method="post">
+    <div class="form-group"> Id: <input class="form-control"
+                                        type="text" name="coursId"
+                                        th:field="*{coursId}" /></div>
+    <div class="form-group"> Titre: <input class="form-control"  type="text" name="titre"
+                                        th:field="*{titre}" /></div>
+    <div class="form-group"> Crédits: <input class="form-control"  type="text" name="credits"
+                                        th:field="*{credits}" /></div>
+    <div class="form-group"> Département: <select class="form-control"   name="departement"
+                                                  th:field="*{departement}" >
+        <option th:each="d: ${deps}" th:value="${d.depId}" th:text="${d.nom}"></option>
+    </select></div>
+    <div class="form-group"> Emplacement: <input class="form-control"  type="text" name="emplacement"
+                                        th:field="*{emplacement}" /></div>
+    <div><button class="btn btn-primary" type="submit">Enregistrer</button></div>
+</form>
+</body>
+</html>

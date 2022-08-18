@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des cours</title>
+</head>
+<body>
+<table class="table">
+    <thead class="table-dark">
+    <tr>
+        <th scope="col">Titre</th>
+        <th scope="col">Crédits</th>
+        <th scope="col">Département</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="c:${liste}">
+        <th scope="row" th:text="${c.titre}"/>
+        <td th:text="${c.credits}"/>
+        <td th:text="${c.departement.nom}"/>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
